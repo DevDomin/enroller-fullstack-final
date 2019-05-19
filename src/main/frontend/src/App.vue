@@ -24,6 +24,7 @@
     import LoginForm from "./LoginForm";
     import MeetingsPage from "./meetings/MeetingsPage";
     import Vue from "vue";
+
     export default {
         components: {LoginForm, MeetingsPage},
         data() {
@@ -98,9 +99,11 @@
     max-width: 1000px;
     margin: 0 auto;
   }
+
   .logo {
     vertical-align: middle;
   }
+
   .alert {
     padding: 10px;
     margin-bottom: 10px;
@@ -115,4 +118,6 @@
       color: white;
     }
   }
+
 </style>
+

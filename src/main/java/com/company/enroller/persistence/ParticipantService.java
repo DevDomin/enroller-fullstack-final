@@ -15,7 +15,7 @@ public class ParticipantService {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-    
+
     public ParticipantService() {
         connector = DatabaseConnector.getInstance();
     }
@@ -29,9 +29,9 @@ public class ParticipantService {
     }
 
     public Participant add(Participant participant) {
-       String hasedPassword = passwordEncoder.encode(participant.getPassword());
-       participant.setPassword(hasedPassword);
-    	Transaction transaction = connector.getSession().beginTransaction();
+        String hashedPassword = passwordEncoder.encode(participant.getPassword());
+        participant.setPassword(hashedPassword);
+        Transaction transaction = connector.getSession().beginTransaction();
         connector.getSession().save(participant);
         transaction.commit();
         return participant;
